@@ -18,9 +18,6 @@
     "SharedArrayBuffer": "readonly"
   },
   "parser": "@typescript-eslint/parser",
-  // "parserOptions": {
-  //   "project": "./tsconfig.json"
-  // },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
@@ -41,7 +38,15 @@
         "allowSeparatedGroups": false
       }
     ],
+    "import/prefer-default-export": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
   }
 }

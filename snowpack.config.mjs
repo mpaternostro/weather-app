@@ -25,15 +25,17 @@ export default {
     // "bundle": true,
   },
   packageOptions: {
-    knownEntrypoints: [
-      "react/jsx-runtime",
-      // ...
-    ],
+    knownEntrypoints: ["react/jsx-runtime"],
+    source: "local",
+    types: true,
   },
   devOptions: {
     /* ... */
   },
   buildOptions: {
     /* ... */
+  },
+  alias: {
+    components: "./src/components",
   },
 };
