@@ -1,0 +1,47 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "prettier",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jest/recommended"
+  ],
+  "plugins": ["react", "jest", "@typescript-eslint"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  // "parserOptions": {
+  //   "project": "./tsconfig.json"
+  // },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
+      "parserOptions": {
+        "project": ["./tsconfig.json"] // Specify it only for TypeScript files
+      }
+    }
+  ],
+  "rules": {
+    "linebreak-style": "off",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": false
+      }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}
