@@ -1,13 +1,17 @@
 {
   "extends": [
     "airbnb-typescript",
-    "prettier",
-    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:jest/recommended"
+    "plugin:import/recommended",
+    "plugin:import/typescript"
   ],
-  "plugins": ["react", "jest", "@typescript-eslint"],
+  "plugins": ["react", "react-hooks", "jest", "import", "@typescript-eslint"],
   "env": {
     "browser": true,
     "es6": true,
@@ -20,10 +24,10 @@
   "parser": "@typescript-eslint/parser",
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
       "parserOptions": {
         "project": ["./tsconfig.json"] // Specify it only for TypeScript files
-      }
+      },
+      "files": ["*.ts", "*.tsx"] // Your TypeScript files extension
     }
   ],
   "rules": {
@@ -43,6 +47,9 @@
     "react/react-in-jsx-scope": "off"
   },
   "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true
