@@ -1,22 +1,29 @@
-import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Homepage } from "./pages/Homepage/Homepage";
 
 function App(): JSX.Element {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Update the count (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-
-  // Return the App component.
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-      </header>
+      <BrowserRouter>
+        <header className="App-header">
+          <h1>Weather App</h1>
+          <ul>
+            <li>Select city</li>
+            <li>About</li>
+            <li>Settings</li>
+          </ul>
+        </header>
+        <main>
+          <Switch>
+            <Route path="/" exact>
+              <Homepage />
+            </Route>
+            <Route path="/forecast/:day" exact>
+              {/* <FullDayForecast /> */}
+            </Route>
+          </Switch>
+        </main>
+      </BrowserRouter>
     </div>
   );
 }
