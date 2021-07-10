@@ -2,7 +2,7 @@ import type { Forecast, ForecastRawData } from "types/Forecast";
 
 export function mapForecast(forecastData: ForecastRawData): Forecast {
   return {
-    date: new Date(forecastData.dt),
+    date: new Date(forecastData.dt * 1000),
     currentTemp: forecastData.main.temp,
     minTemp: forecastData.main.temp_min,
     maxTemp: forecastData.main.temp_max,

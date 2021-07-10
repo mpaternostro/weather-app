@@ -1,3 +1,4 @@
+import { NavBar } from "components/NavBar/NavBar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Homepage } from "./pages/Homepage/Homepage";
 
@@ -5,14 +6,7 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <BrowserRouter>
-        <header className="App-header">
-          <h1>Weather App</h1>
-          <ul>
-            <li>Select city</li>
-            <li>About</li>
-            <li>Settings</li>
-          </ul>
-        </header>
+        <NavBar />
         <main>
           <Switch>
             <Route path="/" exact>
