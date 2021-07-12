@@ -1,18 +1,20 @@
+interface City {
+  id: number;
+  name: string;
+  coord: { lat: number; lon: number };
+  country: string;
+  population: number;
+  timezone: number;
+  sunrise: number;
+  sunset: number;
+}
+
 export interface FiveDayForecastRawData {
   cod: string;
   message: number;
   cnt: number;
   list: ForecastRawData[];
-  city: {
-    id: number;
-    name: string;
-    coord: { lat: number; lon: number };
-    country: string;
-    population: number;
-    timezone: number;
-    sunrise: number;
-    sunset: number;
-  };
+  city: City;
 }
 
 export interface ForecastRawData {
@@ -42,6 +44,11 @@ export interface ForecastRawData {
   sys: { pod: "n" | "d" };
   rain?: { "3h": number };
   snow?: { "3h": number };
+}
+
+export interface ForecastData {
+  city: City;
+  list: Forecast[];
 }
 
 export interface Forecast {
