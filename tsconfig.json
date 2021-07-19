@@ -19,7 +19,7 @@
     /* Additional Options */
     "strict": true,
     "skipLibCheck": true,
-    "types": ["snowpack-env", "node"],
+    "types": ["snowpack-env", "node", "jest"],
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
