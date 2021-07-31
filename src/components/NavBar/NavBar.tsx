@@ -1,14 +1,17 @@
+import { SearchIcon } from "components/SearchIcon/SearchIcon";
+import { StyledNavBar } from "components/NavBar/StyledNavBar";
 import { Link } from "react-router-dom";
 
 export function NavBar(): JSX.Element {
   return (
-    <header className="App-header">
+    <StyledNavBar>
       <nav>
         <ul>
           <li>
             <Link to="/">Weather App</Link>
           </li>
           <li>
+            <SearchIcon />
             <input
               name="search"
               type="search"
@@ -20,6 +23,6 @@ export function NavBar(): JSX.Element {
           </li>
         </ul>
       </nav>
-    </header>
+    </StyledNavBar>
   );
 }
