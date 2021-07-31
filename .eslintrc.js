@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   extends: [
     "airbnb-typescript",
     "plugin:@typescript-eslint/recommended",
@@ -16,6 +17,7 @@ module.exports = {
     browser: true,
     es6: true,
     jest: true,
+    node: true,
   },
   globals: {
     Atomics: "readonly",
@@ -28,9 +30,9 @@ module.exports = {
   },
   overrides: [
     {
-      // parserOptions: {
-      //   project: ["./tsconfig.dev.json"], // Specify it only for TypeScript files
-      // },
+      parserOptions: {
+        project: ["./tsconfig.dev.json"], // Specify it only for TypeScript files
+      },
       files: ["*.ts", "*.tsx"], // Your TypeScript files extension
     },
   ],
